@@ -1,0 +1,50 @@
+@media only screen and (min-width:48rem){
+
+    header, main, nav, footer {
+        max-width: 1260px;
+        margin: 0 auto;
+    }
+
+    header {
+        grid-template-columns: 24px auto 400px ;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .navigation {
+        display: flex;
+
+    }
+    .navigation ul{
+        display: flex;
+    }
+
+    .navigation a{
+        border: none;
+        font-size: 1.5rem;
+    }
+
+    .icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    
+    }
+
+    .icons img{
+    width: auto;
+    height: 120%;
+    padding: 0.5rem;
+    }
+
+    .icons img{
+    width: auto;
+    height: 120%;
+    padding: 0.5rem;
+    }
+    }
+
+   

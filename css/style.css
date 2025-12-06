@@ -1,0 +1,110 @@
+*{
+    font-family:"josefin Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 24px auto 44px;
+  padding: 10px 2px 6px 12px;
+  align-items: end;
+  border-bottom: solid 8px #f3159a;
+  column-gap: 10px;
+  background-color: #e6b1d2;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5px;
+}
+
+header span {
+    font-size: 2rem;
+    color:rgb(50, 7, 90);
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    color:#5d0f85;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.hamburger::before {
+  content: "\2630";
+  font-size: 2rem;
+}
+.hamburger.show::before {
+  content: "\00D7";
+}
+
+.navigation {
+    display: none;
+}
+
+.navigation.show {
+    display: block;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    display: block;
+    padding: .8rem 10px;
+    color:rgb(50, 7, 90);
+    text-decoration: none;
+    border-bottom: solid 1px ;
+    font-size: 20px;
+}
+
+.navigation li.current{
+    background-color: #dbbccf;
+    font-size: 20px ;
+}
+.navigation a:hover{
+    background-color: rgb(50, 7, 90);
+    color: white;
+}
+button {
+  padding: 0.8rem 1.3rem;
+  background-color: rgb(186, 137, 231);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 2rem;
+  cursor: pointer;
+
+  }
+
+  button:hover {
+  background-color: #e420ca;
+}
+
+footer{
+  background-color: #e6b1d2;
+  border-top: solid 8px #f3159a;
+  display: flex;
+  justify-content: center;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  
+}
+
+.icons img{
+  width: auto;
+  height: 160%;
+  padding: 0.1rem;
+}
