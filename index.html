@@ -19,13 +19,60 @@
 </head>
 <body>
     <header>
-        <h1>Final Project</h1>
+        <img src="images/house.svg" alt="site logo" width="512" height="512">
+        <span>Learning Language</span>
+        <button id="navbutton" class="hamburger" aria-label="navigation"></button>
     </header>
+    <nav id="navbar" class="navigation">
+        <ul>
+            <li class="current"><a href="index.html">Home</a></li>
+            <li><a href=""></a>My List</li>
+            <li><a href=""></a>My Quiz</li>
+        </ul>
+
+    <section class="top-controls" aria-label="Search and filters">
+      <input type="text" placeholder="Search" aria-label="Search">
+
+      <div class="top-controls-row">
+        <select aria-label="Select option">
+          <option value="">Select</option>
+        </select>
+
+        <button type="button">Button</button>
+      </div>
+    </section>
+    </nav>
     <main>
-        
+        <div class="left-column">
+            <section class="card word-of-day" aria-labelledby="word-of-day-title">
+                <h2 id="word-of-day-title" class="section-title">Word of the day</h2>
+                <div class="image-placeholder" aria-hidden="true"></div>
+            </section>
+            <section class="card mi-list" aria-labelledby="mi-list-title">
+                <h2 id="mi-list-title" class="section-title">Mi list</h2>
+                <div class="list-items">
+                    <div class="list-item" aria-hidden="true"></div>
+                    <div class="list-item" aria-hidden="true"></div>
+                    <div class="list-item" aria-hidden="true"></div>
+                    <div class="list-item" aria-hidden="true"></div>
+                </div>
+            </section>
+        </div>
+        <div class="right-column">
+            <section class="card quiz-card" aria-labelledby="mi-quiz-title">
+                <h2 id="mi-quiz-title" class="section-title">Mi Quiz</h2>
+                <div class="image-placeholder" aria-hidden="true"></div>
+            </section>
+        </div>
     </main>
     <footer>
-
+        <div class="icons">
+            <h3>Learning Leanguage</h3>
+            <a href="" target="_blank"><img src="images/instagram.svg" alt="instagram" width="16" height="16"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.svg" alt="Facebook" width="16" height="16"></a>
+            <p>WDD 330 Final Project - Joselyn Rodriguez ©️<span id="currentyear"></span></p>
+            <p><span id="lastModified"></span></p>
+        </div>
     </footer>
 </body>
 </html>
