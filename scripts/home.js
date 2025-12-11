@@ -56,7 +56,7 @@ function normalizeDictionaryData(apiResponse) {
 }
 
 async function translateText(text, targetLang) {
-    const res = await fetch("https://libretranslate.de/translate", {
+    const res = await fetch("https://translate.argosopentech.com/translate", {
         method: "POST",
         body: JSON.stringify({
             q: text,
@@ -67,11 +67,14 @@ async function translateText(text, targetLang) {
         headers: { "Content-Type": "application/json" }
     });
 
-    if (!res.ok) throw new Error("Translation failed");
+    if (!res.ok) {
+        throw new Error("Translation failed");
+    }
 
     const data = await res.json();
     return data.translatedText;
 }
+
 
 const VOCAB_KEY = "language_tool_vocab";
 
