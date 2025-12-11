@@ -54,8 +54,9 @@ function normalizeDictionaryData(apiResponse) {
         examples,
     };
 }
+
 async function translateText(text, targetLang) {
-    const res = await fetch("https://translate.astian.org/translate", {
+    const res = await fetch("https://libretranslate.de/translate", {
         method: "POST",
         body: JSON.stringify({
             q: text,
