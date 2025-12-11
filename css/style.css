@@ -59,7 +59,7 @@ header span {
     padding: .8rem 10px;
     color:rgb(50, 7, 90);
     text-decoration: none;
-    border-bottom: solid 1px ;
+    border-bottom: solid 1px;
     font-size: 20px;
 }
 
@@ -73,16 +73,15 @@ header span {
 }
 button {
   padding: 0.8rem 1.3rem;
-  background-color: rgb(186, 137, 231);
+  background-color: rgb(116, 14, 211);
   color: white;
   border: none;
   border-radius: 6px;
   font-size: 2rem;
   cursor: pointer;
+}
 
-  }
-
-  button:hover {
+button:hover {
   background-color: #e420ca;
 }
 
@@ -107,4 +106,14 @@ footer{
   width: auto;
   height: 160%;
   padding: 0.1rem;
+}
+
+.button {
+  background-color: #ff9900;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }

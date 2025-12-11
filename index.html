@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/stylelarge.css">
     <link rel="icon" href="favicon.ico">
-    <script src="scripts/home.js"></script>
+    <script src="scripts/home.js" defer></script>
 </head>
 <body>
     <header>
@@ -27,23 +27,22 @@
     <nav id="navbar" class="navigation">
         <ul>
             <li class="current"><a href="index.html">Home</a></li>
-            <li><a href=""></a>My List</li>
-            <li><a href=""></a>My Quiz</li>
+            <li><a href="">List</a></li>
+            <li><a href="">Quiz</a></li>
         </ul>
     </nav>
-    <section class="top-controls" aria-label="Search and filters">
-      <input type="text" placeholder="Search" aria-label="Search">
-
-      <div class="top-controls-row">
-        <select aria-label="Select option">
-          <option value="">Select</option>
-        </select>
-
-        <button type="button">Button</button>
-      </div>
-    </section>
     
     <main>
+        <section class="top-controls" aria-label="Search and filters">
+            <input type="text" placeholder="Search" aria-label="Search">
+            <div class="top-controls-row">
+                <select aria-label="Select option">
+                <option value="">Select</option>
+                </select>
+
+                <button type="button">Button</button>
+            </div>
+        </section>
         <div class="left-column">
             <section class="card word-of-day" aria-labelledby="word-of-day-title">
                 <h2 id="word-of-day-title" class="section-title">Word of the day</h2>
@@ -71,8 +70,7 @@
             <h3>Learning Leanguage</h3>
             <a href="" target="_blank"><img src="image/instagram.svg" alt="instagram" width="16" height="16"></a>
             <a href="https://www.facebook.com/" target="_blank"><img src="image/facebook.svg" alt="Facebook" width="16" height="16"></a>
-            <p>WDD 330 Final Project - Joselyn Rodriguez ©️<span id="currentyear"></span></p>
-            <p><span id="lastModified"></span></p>
+            <p>WDD 330 Final Project - Joselyn Rodriguez ©️ <span id="currentyear"></span></p>
         </div>
     </footer>
 </body>
