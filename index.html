@@ -10,60 +10,111 @@
     <meta property="og:description" content="">
     <meta property="og:image" content=".github.io/wdd231/finalproject/mmjj">
     <meta property="og:url" content="https://joselynrodriguez.github.io/wdd231/finalproject/directory">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Playwrite+AU+QLD:wght@100..400&family=Roboto&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/stylelarge.css">
     <link rel="icon" href="favicon.ico">
-    <script src="scripts/home.js" defer></script>
+    <script src="scripts/home.js"></script>
+
 </head>
 <body>
     <header>
         <img src="image/house.svg" alt="site logo" width="512" height="512">
-        <span>Learning Language</span>
-        <button id="navbutton" class="hamburger" aria-label="navigation"></button>
+        <h1>Language Learning Tool</h1>
+        <p class="app-subtitle">Connect vocabulary with real-world usage.</p>
     </header>
-    <nav id="navbar" class="navigation">
-        <ul>
-            <li class="current"><a href="index.html">Home</a></li>
-            <li><a href="">List</a></li>
-            <li><a href="">Quiz</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <section class="top-controls" aria-label="Search and filters">
-            <input type="text" placeholder="Search" aria-label="Search">
-            <div class="top-controls-row">
-                <select aria-label="Select option">
-                <option value="">Select</option>
-                </select>
+    <main class="app-layout">
+        <section class="panel panel-word" aria-labelledby="word-section-title">
+        <header class="panel-header">
+            <h2 id="word-section-title">Word of the Day</h2>
+            <button id="btn-new-word" class="btn primary" type="button">New word</button>
+        </header>
 
-                <button type="button">Button</button>
+        <form id="search-form" class="search-form" role="search" aria-label="Search for a word">
+            <label for="search-input" class="visually-hidden">Search word</label>
+            <input
+            id="search-input"
+            type="search"
+            name="q"
+            placeholder="Search a word..."
+            autocomplete="off"
+            />
+            <button type="submit" class="btn secondary">Search</button>
+        </form>
+
+        <article id="word-card" class="card word-card" aria-live="polite">
+            <h3 id="word-text" class="word-text">Loading...</h3>
+            <p id="word-phonetic" class="word-phonetic"></p>
+
+            <div id="word-definition" class="word-definition"></div>
+
+            <div class="word-extra">
+            <div class="word-section">
+                <h4>Examples</h4>
+                <ul id="word-examples" class="word-examples"></ul>
             </div>
-        </section>
-        <div class="left-column">
-            <section class="card word-of-day" aria-labelledby="word-of-day-title">
-                <h2 id="word-of-day-title" class="section-title">Word of the day</h2>
-                <div class="image-placeholder" aria-hidden="true"></div>
-            </section>
-            <section class="card mi-list" aria-labelledby="mi-list-title">
-                <h2 id="mi-list-title" class="section-title">Mi list</h2>
-                <div class="list-items">
-                    <div class="list-item" aria-hidden="true"></div>
-                    <div class="list-item" aria-hidden="true"></div>
-                    <div class="list-item" aria-hidden="true"></div>
-                    <div class="list-item" aria-hidden="true"></div>
+
+            <div class="word-section">
+                <h4>Translation</h4>
+                <div class="translation-controls">
+                <label for="target-language">Target language:</label>
+                <select id="target-language" name="target-language">
+                    <option value="es">Spanish</option>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="zh">Chinese</option>
+                </select>
+                <button id="btn-translate" class="btn secondary" type="button">
+                    Translate
+                </button>
                 </div>
-            </section>
-        </div>
-        <div class="right-column">
-            <section class="card quiz-card" aria-labelledby="mi-quiz-title">
-                <h2 id="mi-quiz-title" class="section-title">Mi Quiz</h2>
-                <div class="image-placeholder" aria-hidden="true"></div>
-            </section>
-        </div>
+                <p id="word-translation" class="word-translation"></p>
+            </div>
+            </div>
+
+            <div class="word-actions">
+            <button id="btn-save-word" class="btn success" type="button">
+                Save to vocabulary list
+            </button>
+            </div>
+
+            <p id="word-feedback" class="feedback" role="status" aria-live="polite"></p>
+        </article>
+        </section>
+
+        <section class="panel panel-vocab" aria-labelledby="vocab-section-title">
+        <header class="panel-header">
+            <h2 id="vocab-section-title">My vocabulary list</h2>
+        </header>
+
+        <div id="vocab-list-container" class="vocab-list-container" aria-live="polite"></div>
+        </section>
+        <section class="panel panel-quiz" aria-labelledby="quiz-section-title">
+        <header class="panel-header">
+            <h2 id="quiz-section-title">Quiz</h2>
+            <button id="btn-start-quiz" class="btn primary" type="button">
+            Start quiz
+            </button>
+        </header>
+
+        <article id="quiz-card" class="card quiz-card" aria-live="polite">
+            <p id="quiz-message">Save some words first to generate quizzes.</p>
+            <div id="quiz-question-container" class="quiz-question-container"></div>
+            <div id="quiz-options-container" class="quiz-options-container"></div>
+
+            <div class="quiz-footer">
+            <p id="quiz-score" class="quiz-score"></p>
+            <button id="btn-next-question" class="btn secondary" type="button" disabled>
+                Next question
+            </button>
+            </div>
+
+            <p id="quiz-feedback" class="feedback" role="status" aria-live="polite"></p>
+        </article>
+        </section>
     </main>
     <footer>
         <div class="icons">
