@@ -55,22 +55,21 @@ function normalizeDictionaryData(apiResponse) {
     };
 }
 
-Const res = await fetch("https://libretranslate.com/translate", {
-	method: "POST",
-	body: JSON.stringify({
-		q: "",
-		source: "auto",
-		target: "en",
-		format: "text",
-		alternatives: 3,
-		api_key: ""
-	}),
-	headers: { "Content-Type": "application/json" }
-});
+async function translateText(text, targetLang) {
+    const res = await fetch("https://translate.argosopentech.com/translate", {
+        method: "POST",
+        body: JSON.stringify({
+            q: text,
+            source: "en",
+            target: targetLang,
+            format: "text"
+        }),
+        headers: { "Content-Type": "application/json" }
+    });
 
-console.log(await res.json());
-Response
-
+    if (!res.ok) {
+        throw new Error("Translation failed");
+    }
 
     const data = await res.json();
     return data.translatedText;
